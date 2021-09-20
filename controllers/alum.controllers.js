@@ -1,10 +1,18 @@
 const ctrlHome = {};
-const { findById, findByIdAndUpdate, findByIdAndDelete } = require('../models/User');
-const User = require('../models/User');
+const { findById, findByIdAndUpdate, findByIdAndDelete } = require('../models/alum');
+const User = require('../models/alum');
+
+ctrlHome.rutaVista = async (req, res) => {
+    const users = await User.find() 
+
+    res.json(users);
+}
+
 
 ctrlHome.rutaGet = async (req, res) => {
-    
-    const users = await User.find() 
+
+    const id = req.params.id;
+    const users = await User.findById(id) 
 
     res.json(users);
 }

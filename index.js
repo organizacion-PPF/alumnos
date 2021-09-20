@@ -12,6 +12,6 @@ app.use(express.urlencoded({ extended: false }));
 app.set('port', process.env.PORT || 3000);
 
 // Routes
-app.use(require('./routes/user.routes'));
+app.use(require('./routes/alum.routes'));
  
 app.listen(app.get('port'), ()=> console.log(`Server on port ${app.get('port')}`))
