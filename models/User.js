@@ -3,19 +3,21 @@ const { model, Schema } = require('mongoose');
 const UserSchema = new Schema({
 
     "Informacion personal": {
-        nombre: {type: String},
+        nombre: {type: String, required: true},
 
-        apellido: {type: String},
+        apellido: {type: String, required: true},
 
-        edad: {type:Number},
+        edad: {type:Number, required: true},
 
-        "Fecha de nacimiento": {type: String},
+        "fecha de nacimiento": {type: String, required: true},
 
-        telefono : Number,
+        telefono : {type: String, required: true},
 
-        domicilio: {type: String},
+        domicilio: {type: String, required: true},
 
-        dni: {type:Number},
+        dni: {type: String, required: true},
+
+        "tipo de sangre": {type: String},
 
         tutores :{
             nombre_tutor: {type: String},
@@ -28,6 +30,7 @@ const UserSchema = new Schema({
         },
 
     },
+
    
     "Intereses/hobby": {
         musica : {
@@ -37,24 +40,29 @@ const UserSchema = new Schema({
         },
         actividades : {
             "deportes": {type: Boolean},
-            "Mirar peliculas/series":{type: Boolean},
+            "mirar peliculas/series":{type: Boolean},
             "salir": {type: Boolean},
-            "dibujar/pintar": {type: Boolean}
-        }
-    },
-
-    "Datos Academicos/Profesionales":{
-
-        Primaria: {
-            Completo_p :{type: Boolean},
-            Institucion_p: {type: String},
-            direccion_p: {type: String}
+            "dibujar/pintar": {type: Boolean},
+            "instrumentos" : {type : Boolean}
         },
 
-        Secundaria: {
-            Completo_s : {type: Boolean},
-            Institucion_s: {type: String},
-            direccion_s: {type: String}
+        cuadro: {type: String },
+    
+
+    },
+
+    "Datos academicos/profesionales":{
+
+        primaria: {
+            completo_p :{type: Boolean, required: true},
+            institucion_p: {type: String, required: true},
+            direccion_p: {type: String, required: true}
+        },
+
+        secundaria: {
+            completo_s : {type: Boolean, required: true},
+            institucion_s: {type: String, required: true},
+            direccion_s: {type: String, required: true}
         },
 
         carrera:{
@@ -74,7 +82,22 @@ const UserSchema = new Schema({
         ]
        
 
-    }
+    },
+
+    "Experiencia laboral" : {
+
+        "tiene experiencia" : {type: Boolean},
+
+        rubro : [{
+            "tipo de rubro":  {type: String}
+        }],
+            
+        "años de trabajo" : {type: Number},
+
+        "perfil Github" : {type: String}
+    },
+
+
 });
 
 
