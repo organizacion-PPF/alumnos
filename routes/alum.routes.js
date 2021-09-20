@@ -1,11 +1,15 @@
 const router = require('express').Router();
 
 const { 
-    rutaGet, rutaPost, rutaPut, rutaDelete, deleteUser
- } = require('../controllers/user.controllers');
+    rutaVista,rutaGet, rutaPost, rutaPut, rutaDelete, deleteUser
+ } = require('../controllers/alum.controllers');
 
 //  Ruta que devuelve todos los usuarios
-router.get('/', rutaGet)
+
+router.get('/vista', rutaVista)
+router.get('/:id', rutaGet)
+
+
 
 router.post('/', rutaPost)
 
