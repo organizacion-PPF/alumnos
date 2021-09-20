@@ -27,7 +27,7 @@ const UserSchema = new Schema({
             dni_tutor:{type: String},
 
             domicilio: {type: String}
-        },
+        }
 
     },
 
@@ -46,7 +46,7 @@ const UserSchema = new Schema({
             "instrumentos" : {type : Boolean}
         },
 
-        cuadro: {type: String },
+        cuadro: {type: String }
     
 
     },
@@ -95,7 +95,7 @@ const UserSchema = new Schema({
         "años de trabajo" : {type: Number},
 
         "perfil Github" : {type: String}
-    },
+    }
 
 
 });
